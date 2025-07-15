@@ -1,58 +1,30 @@
-Features
-Boolean Search: Supports AND (&) and OR (space) operations.
+# BolSearch
 
-Tokenization: Cleans and splits text into lowercase words (removes punctuation).
+**BolSearch** is a Jupyter Notebook project focused on extracting, searching, and analyzing data from the [Books Open Library (BOL)](https://openlibrary.org/developers/api) dataset using basic natural language processing (NLP) and search techniques. The project demonstrates how to load, process, and search textual data, making it useful for learning about tokenization, inverted indexes, and document retrieval.
 
-Inverted Index: Efficiently maps keywords to document IDs for fast lookup.
+## Features
 
-Benchmarking: Measures query execution time in microseconds (µs).
+- Tokenizes and preprocesses book data
+- Builds an inverted index for efficient search
+- Supports simple keyword-based search
+- Ranks and displays relevant results
 
-⚙️ Installation
-Clone the repository (if applicable) or download BolSearch.ipynb.
+## Prerequisites
 
-Ensure Python 3.x and Jupyter Notebook are installed.
+To run this notebook, you will need:
 
-Install dependencies (none beyond standard libraries: json, time).
+- Python 3.x
+- Jupyter Notebook
+- The following Python libraries:
+  - `nltk`
+  - `pandas`
+  - `numpy`
+  - `re` (standard library)
+  - `collections` (standard library)
 
-🚀 Usage
-Prepare Data:
+You can install missing libraries using pip:
 
-Place your dataset (e.g., news.json) in the same directory.
-
-Each JSON line should contain a "short_description" field (see load_dataset()).
-
-Run the Notebook:
-
-sh
-jupyter notebook BolSearch.ipynb
-Execute cells to:
-
-Build the inverted index (Index_Creation).
-
-Run sample queries (experiment() function).
-
-Custom Queries:
-Modify sample_queries in the __main__ block or call:
-
-python
-Boolean_Search("your&query", term_index)
-🔍 How It Works
-Tokenization:
-
-Converts text to lowercase and removes punctuation.
-
-Example: "Hello, world!" → ["hello", "world"].
-
-Inverted Index:
-
-Maps each word to a list of document IDs containing it.
-
-Example: {"hello": [0, 2], "world": [0, 1]}.
-
-Query Processing:
-
-AND (&): Intersection of document IDs (e.g., king&salman).
-
-OR (space): Union of document IDs (e.g., football basketball).
+```bash
+pip install nltk pandas numpy
 
 
